@@ -1,0 +1,700 @@
+/* =========================================================
+   IDENTIDADE VISUAL E BASE
+   ========================================================= */
+
+:root {
+    --verde-900: #17372f;
+    --verde-800: #23483e;
+    --verde-700: #2f5e50;
+    --verde-100: #e9f1ed;
+    --creme: #fbf7f0;
+    --laranja: #d97b2d;
+    --laranja-escuro: #b85f18;
+    --texto: #2d302f;
+    --texto-suave: #6d7471;
+    --branco: #ffffff;
+    --borda: #e5e2dc;
+    --sombra: 0 1rem 3rem rgba(23, 55, 47, 0.12);
+}
+
+/* Seletor de elemento: define estilos-base de texto e página. */
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.65;
+    color: var(--texto);
+    background:
+        radial-gradient(circle at top left, rgba(217, 123, 45, 0.08), transparent 28rem),
+        var(--creme);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    color: inherit;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+/* =========================================================
+   ETAPA 2 - SELETORES, ESPECIFICIDADE E CASCATA
+   ========================================================= */
+
+/* Seletor de classe: .destaque é aplicado a vários elementos da página. */
+.destaque {
+    font-weight: 700;
+}
+
+/*
+EXPERIMENTO DE ESPECIFICIDADE:
+O header possui ao mesmo tempo a classe .fundo-teste e o id #cabecalho.
+A regra do id vence porque um seletor de id tem maior especificidade que um seletor de classe.
+Se background-color na classe estivesse marcado com !important, essa declaração passaria
+a ter prioridade sobre a declaração normal do id.
+*/
+.fundo-teste {
+    background-color: #d9ead3;
+}
+
+/* Seletor de id: aplica-se a um único elemento específico. */
+#cabecalho {
+    background-color: var(--verde-900);
+    color: var(--branco);
+}
+
+/* =========================================================
+   CABEÇALHO E NAVEGAÇÃO
+   ========================================================= */
+
+.cabecalho-conteudo {
+    width: min(92%, 74rem);
+    margin: 0 auto;
+    min-height: 5rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    justify-content: space-between;
+}
+
+.marca {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    font-weight: 800;
+    text-decoration: none;
+    letter-spacing: -0.02em;
+}
+
+.marca-simbolo {
+    display: inline-grid;
+    place-items: center;
+    width: 2.6rem;
+    aspect-ratio: 1;
+    border-radius: 0.8rem;
+    background: var(--laranja);
+    color: var(--branco);
+    font-size: 0.85rem;
+}
+
+/*
+Flexbox foi escolhido para o menu porque os itens precisam ficar em uma única dimensão,
+organizados horizontalmente em linha.
+*/
+.menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 0.4rem;
+    align-items: center;
+}
+
+.menu a {
+    display: block;
+    text-decoration: none;
+    padding: 0.65em 0.9em;
+    border-radius: 999px;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+/* Pseudo-classe :hover nos links do menu. */
+.menu a:hover {
+    background: rgba(255, 255, 255, 0.14);
+    color: #fff6eb;
+}
+
+.resumo-carrinho {
+    margin: 0;
+    padding: 0.55em 0.85em;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    white-space: nowrap;
+}
+
+.resumo-carrinho strong {
+    display: inline-grid;
+    place-items: center;
+    min-width: 1.7rem;
+    height: 1.7rem;
+    border-radius: 999px;
+    background: var(--laranja);
+}
+
+/* =========================================================
+   CONTEÚDO PRINCIPAL
+   ========================================================= */
+
+main {
+    width: min(92%, 74rem);
+    margin: 2.5rem auto 4rem;
+}
+
+.apresentacao {
+    padding: 4.5rem 0 3.5rem;
+    max-width: 48rem;
+}
+
+.apresentacao h1 {
+    margin: 0.35rem 0 1rem;
+    font-size: clamp(2.6rem, 7vw, 5.6rem);
+    line-height: 0.98;
+    letter-spacing: -0.055em;
+    color: var(--verde-900);
+}
+
+.apresentacao > p:not(.selo) {
+    max-width: 38rem;
+    font-size: 1.1rem;
+    color: var(--texto-suave);
+}
+
+.selo {
+    margin: 0;
+    font-size: 0.8rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--laranja-escuro);
+}
+
+.link-destaque {
+    display: inline-block;
+    margin-top: 0.8rem;
+    padding: 0.8em 1.15em;
+    border-radius: 999px;
+    background: var(--verde-900);
+    color: var(--branco);
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.link-destaque:hover {
+    background: var(--verde-700);
+}
+
+/*
+Flexbox foi escolhido para o cartão do livro porque a capa e as informações formam
+dois blocos principais lado a lado no desktop, com alinhamento simples em um único eixo.
+*/
+.card-livro {
+    position: relative;
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+    background: var(--branco);
+    border: 0.08rem solid rgba(23, 55, 47, 0.08);
+    border-radius: 1.6rem;
+    padding: 2.2rem;
+    box-shadow: var(--sombra);
+    overflow: hidden;
+}
+
+.card-livro::after {
+    content: "";
+    position: absolute;
+    width: 14rem;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    right: -5rem;
+    top: -5rem;
+    background: rgba(217, 123, 45, 0.08);
+    pointer-events: none;
+}
+
+.capa-area {
+    position: relative;
+    flex: 0 1 22rem;
+    margin: 0;
+}
+
+.capa-area img {
+    width: 100%;
+    border-radius: 1rem;
+    box-shadow: 0 1.1rem 2.4rem rgba(23, 55, 47, 0.22);
+}
+
+.etiqueta-capa {
+    position: absolute;
+    z-index: 1;
+    top: 1rem;
+    left: 1rem;
+    padding: 0.45em 0.75em;
+    border-radius: 999px;
+    background: var(--laranja);
+    color: var(--branco);
+    font-size: 0.78rem;
+    font-weight: 800;
+}
+
+.capa-area figcaption {
+    margin-top: 0.8rem;
+    text-align: center;
+    color: var(--texto-suave);
+    font-size: 0.9rem;
+}
+
+.livro-info {
+    position: relative;
+    z-index: 1;
+    flex: 1 1 30rem;
+}
+
+.livro-info h2 {
+    margin: 0.25rem 0;
+    font-size: clamp(2.2rem, 5vw, 3.7rem);
+    line-height: 1.04;
+    letter-spacing: -0.045em;
+    color: var(--verde-900);
+}
+
+.categoria {
+    margin: 0;
+    color: var(--laranja-escuro);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.8rem;
+}
+
+.autor {
+    color: var(--texto-suave);
+}
+
+.avaliacao {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    color: #c06d23;
+}
+
+.avaliacao p {
+    margin: 0;
+    color: var(--texto-suave);
+    font-size: 0.92rem;
+}
+
+.preco {
+    margin: 1rem 0 0;
+    font-size: 2rem;
+    line-height: 1;
+    font-weight: 800;
+    color: var(--verde-900);
+}
+
+.parcelamento {
+    margin-top: 0.35rem;
+    color: var(--texto-suave);
+    font-size: 0.92rem;
+}
+
+.beneficios-compra {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+    margin: 1.2rem 0;
+}
+
+.beneficios-compra p {
+    margin: 0;
+    padding: 0.55em 0.75em;
+    border-radius: 999px;
+    background: var(--verde-100);
+    color: var(--verde-800);
+    font-size: 0.88rem;
+}
+
+#btn-adicionar,
+form button[type="submit"] {
+    border: 0;
+    border-radius: 0.8rem;
+    background: var(--laranja);
+    color: var(--branco);
+    cursor: pointer;
+    padding: 0.95em 1.4em;
+    font-weight: 800;
+    box-shadow: 0 0.6rem 1.2rem rgba(217, 123, 45, 0.24);
+    transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Pseudo-classe :hover no botão "Adicionar ao carrinho". */
+#btn-adicionar:hover,
+form button[type="submit"]:hover {
+    background: var(--laranja-escuro);
+    transform: translateY(-0.12rem);
+    box-shadow: 0 0.8rem 1.4rem rgba(217, 123, 45, 0.32);
+}
+
+.mensagem-carrinho {
+    min-height: 1.6rem;
+    margin: 0.6rem 0 0;
+    color: var(--verde-700);
+    font-weight: 700;
+}
+
+#carrinho {
+    margin: 0.35rem 0 0;
+    padding-left: 1.4rem;
+    color: var(--texto-suave);
+}
+
+/* =========================================================
+   SEÇÕES
+   ========================================================= */
+
+.secao-conteudo {
+    margin-top: 2.4rem;
+    background: rgba(255, 255, 255, 0.9);
+    border: 0.08rem solid var(--borda);
+    border-radius: 1.4rem;
+    padding: 2rem;
+}
+
+.titulo-secao {
+    margin-bottom: 1.35rem;
+}
+
+.titulo-secao h2 {
+    margin: 0.25rem 0 0;
+    color: var(--verde-900);
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    letter-spacing: -0.035em;
+}
+
+.titulo-secao > p:not(.selo) {
+    color: var(--texto-suave);
+    max-width: 42rem;
+}
+
+.lista-destaques {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.lista-destaques li {
+    display: grid;
+    gap: 0.35rem;
+    padding: 1.2rem;
+    border: 0.08rem solid var(--borda);
+    border-radius: 1rem;
+    background: var(--creme);
+}
+
+.lista-destaques li > span {
+    font-size: 1.5rem;
+}
+
+.lista-destaques small,
+.formato-card small {
+    color: var(--texto-suave);
+}
+
+/*
+CSS Grid foi escolhido para os cartões de formato porque o bloco precisa distribuir
+itens em linhas e colunas ao mesmo tempo, característica natural de uma grade bidimensional.
+*/
+.grade-formatos {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.formato-card {
+    display: grid;
+    gap: 0.8rem;
+    align-content: start;
+    padding: 1.35rem;
+    border: 0.08rem solid var(--borda);
+    border-radius: 1rem;
+    background: var(--branco);
+}
+
+.formato-card h3,
+.formato-card p {
+    margin: 0;
+}
+
+.formato-card strong {
+    font-size: 1.45rem;
+    color: var(--verde-900);
+}
+
+.formato-destaque {
+    border-color: rgba(217, 123, 45, 0.45);
+    box-shadow: 0 0.8rem 1.8rem rgba(217, 123, 45, 0.1);
+}
+
+.tag-formato {
+    width: fit-content;
+    padding: 0.3em 0.65em;
+    border-radius: 999px;
+    background: var(--verde-100);
+    color: var(--verde-700);
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.tabela-responsiva {
+    overflow-x: auto;
+    border: 0.08rem solid var(--borda);
+    border-radius: 1rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 38rem;
+}
+
+th,
+td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 0.06rem solid var(--borda);
+}
+
+thead {
+    background: var(--verde-900);
+    color: var(--branco);
+}
+
+tbody tr:hover {
+    background: var(--verde-100);
+}
+
+tbody tr:last-child th,
+tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+/* =========================================================
+   FORMULÁRIO
+   ========================================================= */
+
+.contato {
+    background:
+        linear-gradient(135deg, rgba(35, 72, 62, 0.05), transparent 55%),
+        var(--branco);
+}
+
+form {
+    display: grid;
+    gap: 1rem;
+    max-width: 44rem;
+}
+
+.campo-formulario {
+    display: grid;
+    gap: 0.35rem;
+}
+
+.campo-formulario label,
+legend {
+    font-weight: 700;
+    color: var(--verde-900);
+}
+
+.campo-formulario input {
+    width: 100%;
+    padding: 0.85em 0.95em;
+    border: 0.08rem solid #c8cbc8;
+    border-radius: 0.7rem;
+    background: #fffefc;
+    outline: none;
+}
+
+.campo-formulario input:focus {
+    border-color: var(--verde-700);
+    box-shadow: 0 0 0 0.2rem rgba(47, 94, 80, 0.12);
+}
+
+fieldset {
+    border: 0.08rem solid #d7d9d6;
+    border-radius: 0.8rem;
+    padding: 1rem;
+}
+
+.opcao-formulario {
+    display: flex;
+    gap: 0.55rem;
+    align-items: center;
+    margin: 0.35rem 0;
+}
+
+/* =========================================================
+   RODAPÉ
+   ========================================================= */
+
+footer {
+    margin-top: 4rem;
+    padding: 3rem 4% 1.4rem;
+    background: #102821;
+    color: var(--branco);
+}
+
+.rodape-conteudo {
+    width: min(92%, 74rem);
+    margin: 0 auto 2rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.rodape-conteudo h2,
+.rodape-conteudo h3,
+.rodape-conteudo p {
+    margin-top: 0;
+}
+
+.rodape-conteudo a {
+    color: #f4c79f;
+}
+
+.rodape-final {
+    width: min(92%, 74rem);
+    margin: 0 auto;
+    padding-top: 1rem;
+    border-top: 0.06rem solid rgba(255, 255, 255, 0.15);
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.88rem;
+}
+
+/* =========================================================
+   ETAPA 4 - RESPONSIVIDADE
+   Unidades relativas usadas em larguras, margens, espaçamentos
+   e tamanhos de fonte: %, rem e em.
+   ========================================================= */
+
+@media (max-width: 900px) {
+    .cabecalho-conteudo {
+        flex-wrap: wrap;
+        padding: 0.9rem 0;
+    }
+
+    .lista-destaques {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .grade-formatos {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .cabecalho-conteudo {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .menu {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.3rem;
+    }
+
+    .menu li,
+    .menu a {
+        width: 100%;
+    }
+
+    .resumo-carrinho {
+        width: fit-content;
+    }
+
+    main {
+        margin-top: 1rem;
+    }
+
+    .apresentacao {
+        padding: 2.5rem 0;
+    }
+
+    .apresentacao h1 {
+        font-size: clamp(2.4rem, 14vw, 4rem);
+    }
+
+    .card-livro {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1.8rem;
+        padding: 1.2rem;
+    }
+
+    .capa-area,
+    .livro-info {
+        flex-basis: auto;
+        width: 100%;
+    }
+
+    .capa-area {
+        max-width: 19rem;
+        margin: 0 auto;
+    }
+
+    .beneficios-compra {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .beneficios-compra p {
+        width: fit-content;
+    }
+
+    #btn-adicionar,
+    form button[type="submit"] {
+        width: 100%;
+    }
+
+    .secao-conteudo {
+        padding: 1.2rem;
+    }
+
+    .lista-destaques {
+        grid-template-columns: 1fr;
+    }
+
+    .rodape-conteudo {
+        flex-direction: column;
+    }
+}
