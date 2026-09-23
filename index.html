@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+        name="description"
+        content="Página de cadastro e apresentação de livro da Livraria Página Viva."
+    >
+    <title>Livraria Página Viva | O Jardim das Palavras</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+    <header id="cabecalho" class="fundo-teste">
+        <section class="cabecalho-conteudo">
+            <a class="marca" href="#inicio" aria-label="Ir para o início">
+                <span class="marca-simbolo" aria-hidden="true">PV</span>
+                <span>Livraria Página Viva</span>
+            </a>
+
+            <nav aria-label="Navegação principal">
+                <ul class="menu">
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#catalogo">Catálogo</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+
+            <p class="resumo-carrinho" aria-live="polite">
+                <span aria-hidden="true">🛒</span>
+                <span>Carrinho</span>
+                <strong><span id="contador">0</span></strong>
+            </p>
+        </section>
+    </header>
+
+    <main id="inicio">
+        <section class="apresentacao" aria-labelledby="titulo-apresentacao">
+            <p class="selo">Leitura que transforma</p>
+            <h1 id="titulo-apresentacao">Descubra sua próxima história favorita.</h1>
+            <p>
+                Conheça uma seleção especial da Livraria Página Viva e encontre livros
+                que merecem um lugar na sua estante.
+            </p>
+            <a class="link-destaque" href="#catalogo">Ver livro em destaque</a>
+        </section>
+
+        <article id="catalogo" class="card-livro">
+            <figure class="capa-area">
+                <span class="etiqueta-capa">Edição especial</span>
+                <img
+                    src="imagens/capa-livro.png"
+                    alt="Capa ilustrada do livro O Jardim das Palavras, de Helena Duarte"
+                >
+                <figcaption>Edição exclusiva da Livraria Página Viva</figcaption>
+            </figure>
+
+            <section class="livro-info">
+                <p class="categoria destaque">Ficção contemporânea</p>
+                <h2>O Jardim das Palavras</h2>
+                <p class="autor">por <strong>Helena Duarte</strong></p>
+
+                <section class="avaliacao" aria-label="Avaliação do livro">
+                    <span aria-hidden="true">★★★★★</span>
+                    <p>4,9 · leitores da Página Viva</p>
+                </section>
+
+                <p class="preco">R$ 49,90</p>
+                <p class="parcelamento">ou 2x de R$ 24,95 sem juros</p>
+
+                <p>
+                    Em uma cidade onde as pessoas parecem ter esquecido o valor das pequenas
+                    conversas, Clara encontra um jardim escondido nos fundos de uma antiga
+                    biblioteca. Ali, cada banco guarda histórias deixadas por leitores de
+                    diferentes gerações.
+                </p>
+
+                <p>
+                    Ao reconstruir as memórias daquele lugar, ela conhece personagens que
+                    transformam sua relação com os livros, com a própria família e com o
+                    tempo. A narrativa combina delicadeza, descobertas e o prazer de ler.
+                </p>
+
+                <section class="beneficios-compra" aria-label="Benefícios da compra">
+                    <p><strong>✓</strong> Compra segura</p>
+                    <p><strong>✓</strong> Entrega acompanhada</p>
+                    <p><strong>✓</strong> Suporte da livraria</p>
+                </section>
+
+                <button id="btn-adicionar" type="button">
+                    Adicionar ao carrinho
+                </button>
+
+                <p id="mensagem-carrinho" class="mensagem-carrinho" aria-live="polite"></p>
+                <ul id="carrinho" aria-label="Itens adicionados ao carrinho"></ul>
+            </section>
+        </article>
+
+        <section class="secao-conteudo" aria-labelledby="titulo-destaques">
+            <header class="titulo-secao">
+                <p class="selo">Por que escolher este livro?</p>
+                <h2 id="titulo-destaques">Destaques da edição</h2>
+            </header>
+
+            <ul class="lista-destaques">
+                <li class="destaque">
+                    <span aria-hidden="true">📘</span>
+                    <strong>Capa dura</strong>
+                    <small>Acabamento resistente e elegante</small>
+                </li>
+                <li class="destaque">
+                    <span aria-hidden="true">🔖</span>
+                    <strong>Marcador exclusivo</strong>
+                    <small>Um detalhe especial para sua leitura</small>
+                </li>
+                <li class="destaque">
+                    <span aria-hidden="true">🚚</span>
+                    <strong>Frete grátis</strong>
+                    <small>Em compras acima de R$ 79</small>
+                </li>
+                <li class="destaque">
+                    <span aria-hidden="true">⚡</span>
+                    <strong>Entrega rápida</strong>
+                    <small>Envio com acompanhamento</small>
+                </li>
+            </ul>
+        </section>
+
+        <section class="secao-conteudo" aria-labelledby="titulo-formatos">
+            <header class="titulo-secao">
+                <p class="selo">Escolha como ler</p>
+                <h2 id="titulo-formatos">Formatos disponíveis</h2>
+            </header>
+
+            <section class="grade-formatos">
+                <article class="formato-card formato-destaque">
+                    <p class="tag-formato">Mais escolhido</p>
+                    <h3>Físico</h3>
+                    <p>Livro impresso em capa dura, ideal para colecionar.</p>
+                    <strong>R$ 49,90</strong>
+                    <small>Entrega em 2 a 5 dias úteis</small>
+                </article>
+
+                <article class="formato-card">
+                    <p class="tag-formato">Digital</p>
+                    <h3>E-book</h3>
+                    <p>Arquivo digital para leitura imediata em dispositivos compatíveis.</p>
+                    <strong>R$ 24,90</strong>
+                    <small>Acesso imediato</small>
+                </article>
+
+                <article class="formato-card">
+                    <p class="tag-formato">Áudio</p>
+                    <h3>Audiobook</h3>
+                    <p>Versão narrada para ouvir no celular, tablet ou computador.</p>
+                    <strong>R$ 34,90</strong>
+                    <small>Acesso imediato</small>
+                </article>
+            </section>
+        </section>
+
+        <section class="secao-conteudo" aria-labelledby="titulo-tabela">
+            <header class="titulo-secao">
+                <p class="selo">Compare antes de escolher</p>
+                <h2 id="titulo-tabela">Comparação de formatos</h2>
+            </header>
+
+            <section class="tabela-responsiva" aria-label="Tabela com preços e prazos por formato">
+                <table>
+                    <thead>
+                        <tr>
+                            <th scope="col">Formato</th>
+                            <th scope="col">Preço</th>
+                            <th scope="col">Prazo de entrega</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">Físico</th>
+                            <td>R$ 49,90</td>
+                            <td>2 a 5 dias úteis</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">E-book</th>
+                            <td>R$ 24,90</td>
+                            <td>Imediato</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Audiobook</th>
+                            <td>R$ 34,90</td>
+                            <td>Imediato</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </section>
+
+        <section id="contato" class="secao-conteudo contato" aria-labelledby="titulo-contato">
+            <header class="titulo-secao">
+                <p class="selo">Fale com a gente</p>
+                <h2 id="titulo-contato">Contato</h2>
+                <p>Preencha os campos abaixo e nossa equipe responderá assim que possível.</p>
+            </header>
+
+            <form>
+                <section class="campo-formulario">
+                    <label for="nome">Nome</label>
+                    <input id="nome" name="nome" type="text" placeholder="Digite seu nome" required>
+                </section>
+
+                <section class="campo-formulario">
+                    <label for="email">E-mail para contato</label>
+                    <input id="email" name="email" type="email" placeholder="voce@exemplo.com" required>
+                </section>
+
+                <fieldset>
+                    <legend>Preferência de contato</legend>
+
+                    <section class="opcao-formulario">
+                        <input id="preferencia-email" name="preferencia-contato" type="radio" value="email" required>
+                        <label for="preferencia-email">E-mail</label>
+                    </section>
+
+                    <section class="opcao-formulario">
+                        <input id="preferencia-telefone" name="preferencia-contato" type="radio" value="telefone">
+                        <label for="preferencia-telefone">Telefone</label>
+                    </section>
+                </fieldset>
+
+                <section class="opcao-formulario">
+                    <input id="novidades" name="novidades" type="checkbox">
+                    <label for="novidades">Aceito receber novidades por e-mail</label>
+                </section>
+
+                <section class="campo-formulario">
+                    <label for="senha">Crie uma senha para acompanhar seu pedido</label>
+                    <input id="senha" name="senha" type="password" placeholder="Digite uma senha" required>
+                </section>
+
+                <button type="submit">Enviar mensagem</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <section class="rodape-conteudo">
+            <section>
+                <h2>Livraria Página Viva</h2>
+                <p>Histórias que continuam com você.</p>
+            </section>
+
+            <section>
+                <h3>Contato</h3>
+                <p><a href="mailto:contato@paginaviva.com.br">contato@paginaviva.com.br</a></p>
+            </section>
+        </section>
+        <p class="rodape-final">© 2026 Livraria Página Viva · Projeto acadêmico.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+
+    <!--
+    JUSTIFICATIVAS DOS ELEMENTOS SEMÂNTICOS:
+    header: representa o cabeçalho principal da página e reúne a identidade da livraria,
+    a navegação e o resumo do carrinho, sendo mais descritivo do que uma div genérica.
+
+    nav: identifica especificamente o conjunto de links de navegação principal e ajuda
+    navegadores, leitores de tela e mecanismos de busca a entenderem sua finalidade.
+
+    main: delimita o conteúdo principal e único desta página, separando-o do cabeçalho e
+    do rodapé de maneira semântica.
+
+    article: foi usado para o cartão principal do livro e para cada cartão de formato
+    porque esses blocos possuem conteúdo próprio que faz sentido de forma independente.
+
+    section: agrupa partes temáticas relacionadas, como apresentação, destaques, formatos
+    e contato, deixando explícita a organização do conteúdo em vez de usar divs sem significado.
+
+    footer: marca o rodapé da página, reunindo informações institucionais e de contato
+    que encerram o documento de forma semanticamente adequada.
+    -->
+</body>
+</html>
